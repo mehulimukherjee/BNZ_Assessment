@@ -1,0 +1,27 @@
+logging:
+  level:
+    org.springframework.security: trace
+
+spring:
+  security:
+    oauth2:
+      authorizationserver:
+        client:
+          oidc-client:
+            registration:
+              client-id: "weather-client"
+              client-secret: "secret123"
+              client-authentication-methods:
+                - "client_secret_basic"
+              authorization-grant-types:
+                - "authorization_code"
+                - "refresh_token"
+              redirect-uris:
+                - "http://localhost:8080/login/oauth2/weather-client"
+                - "http://localhost:8080/WeatherForecast"
+              post-logout-redirect-uris:
+                - "http://localhost:8080/"
+              scopes:
+                - "openid"
+                - "profile"
+            require-authorization-consent: true
