@@ -85,8 +85,8 @@ public class AuthorizationServerConfig {
 				.clientSecret("secret123").clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
 				.authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
 				.authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-				.redirectUri("http://localhost/login/oauth2/weather-client")
-				.redirectUri("http://localhost/WeatherForecast").postLogoutRedirectUri("http://127.0.0.1:8080/")
+				.redirectUri("http://localhost:8080/login/oauth2/weather-client")
+				.redirectUri("http://localhost:8080/WeatherForecast").postLogoutRedirectUri("http://127.0.0.1:8080/")
 				.scope(OidcScopes.OPENID).scope(OidcScopes.PROFILE)
 				.clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build()).build();
 
